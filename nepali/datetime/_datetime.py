@@ -20,7 +20,8 @@ class formatter_class_mixin:
         if not hasattr(cls, "__formatter_class__Cache"):
             from ._formatter import NepaliDateTimeFormatter
 
-            cls.__formatter_class__Cache = NepaliDateTimeFormatter
+            # TODO: rename __formatter_class__Cache to __formatter_class__cache
+            cls.__formatter_class__Cache = NepaliDateTimeFormatter # TODO: snake case
         return cls.__formatter_class__Cache
 
     @classmethod
@@ -28,19 +29,19 @@ class formatter_class_mixin:
         if not hasattr(cls, "_strptime_method_CACHE"):
             from .parser import strptime
 
-            cls._strptime_method_CACHE = strptime
+            cls._strptime_method_CACHE = strptime # TODO: snake case
         return cls._strptime_method_CACHE
 
     def strftime(self, format: str) -> str:
         return self.strftime_en(format)
 
     def strftime_en(self, format: str) -> str:
-        NepaliDateTimeFormatter = self.get_formatter_class()
+        NepaliDateTimeFormatter = self.get_formatter_class() # TODO: snake case
         formatter = NepaliDateTimeFormatter(self, devanagari=False)
         return formatter.get_str(format)
 
     def strftime_ne(self, format: str) -> str:
-        NepaliDateTimeFormatter = self.get_formatter_class()
+        NepaliDateTimeFormatter = self.get_formatter_class() # TODO: snake case
         formatter = NepaliDateTimeFormatter(self, devanagari=True)
         return formatter.get_str(format)
 
@@ -194,7 +195,7 @@ class nepalidate(formatter_class_mixin):
 
     @staticmethod
     def from_date(date_object):
-        npDate = nepalidate(
+        npDate = nepalidate( # TODO: snake case
             *nepali_date_converter.english_to_nepali(
                 date_object.year, date_object.month, date_object.day
             )

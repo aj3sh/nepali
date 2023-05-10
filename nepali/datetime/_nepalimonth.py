@@ -40,6 +40,7 @@ class NepaliMonthMeta(type):
 
         return cls._cache[value]
 
+    # TODO: cls is unused
     def _parse_str(cls, month: str) -> int:
         """
         Parses str value of the month and returns int.

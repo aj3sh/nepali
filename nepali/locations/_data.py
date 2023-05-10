@@ -10,7 +10,7 @@ _location_data = [
                     {
                         "name": "Himali Rural Municipality",
                         "name_nepali": "हिमाली गाउँपालिका",
-                        "municipality_type": "Rural Municipality",
+                        "municipality_type": "Rural Municipality", # TODO: Define constant for municipality type
                     },
                     {
                         "name": "Gaumul Rural Municipality",

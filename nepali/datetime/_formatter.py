@@ -13,6 +13,8 @@ from ._nepaliweek import nepaliweek
 class NepaliDateTimeFormatter:
     """
     NepaliDateTimeFormatter: formats nepali datetime to string ( using strftime )
+
+    TODO: change property names to snake case
     """
 
     # format according to python's datetime with class method
@@ -40,7 +42,8 @@ class NepaliDateTimeFormatter:
     }
 
     def __init__(self, datetime_object, devanagari=False):
-        # TODO: Change variable npDateTime into snakecase: `np_date_time`
+        # TODO: Change variable npDateTime into snake case: `np_date_time`
+        # TODO: use utils method to convert
         if type(datetime_object) == nepalidatetime:
             self.npDateTime = datetime_object
         elif type(datetime_object) == nepalidate:
@@ -59,6 +62,7 @@ class NepaliDateTimeFormatter:
     def __str__(self):
         return str(self.npDateTime)
 
+    # TODO: Refactor this function to reduce its Cognitive Complexity from 20 to the 15 allowed.
     def get_str(self, format):
         """generates formatted string"""
         i, n = 0, len(format)
@@ -93,6 +97,7 @@ class NepaliDateTimeFormatter:
         except InvalidDateFormatException as e:
             raise e
         except Exception:
+            # TODO: Replace this generic exception class with a more specific one.
             raise Exception("Unable to convert NepaliDateTime to str")
         time_str = "".join(time_str)
 

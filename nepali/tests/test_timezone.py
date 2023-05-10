@@ -32,7 +32,7 @@ class TestNepaliTimeZone(unittest.TestCase):
         )
 
     def test_nepali_timezone_tzname(self):
-        self.assertEqual(self.nepali_timezone.tzname(None), "Asia/Kathmandu")
+        self.assertEqual(self.nepali_timezone.tzname(None), "Asia/Kathmandu") # TODO: use constant
 
     def test_nepali_timezone_str(self):
         self.assertEqual(str(self.nepali_timezone), "Asia/Kathmandu")

@@ -101,6 +101,7 @@ class TestNepaliDateTimeParserValidators(unittest.TestCase):
 
     def test_validate(self):
         nepalidatetime_obj = validate("2078-01-12", format="%Y-%m-%d")
+        # TODO: assert not None
         self.assertEqual(nepalidatetime_obj.year, 2078)
         self.assertEqual(nepalidatetime_obj.month, 1)
         self.assertEqual(nepalidatetime_obj.day, 12)
@@ -114,6 +115,7 @@ class TestNepaliDateTimeParserValidators(unittest.TestCase):
         nepalidatetime_obj = validate(
             "29 Jestha, 2078, 1:30 PM", format="%d %B, %Y, %I:%M %p"
         )
+        # TODO: assert not None
         self.assertEqual(nepalidatetime_obj.year, 2078)
         self.assertEqual(nepalidatetime_obj.month, 2)
         self.assertEqual(nepalidatetime_obj.day, 29)

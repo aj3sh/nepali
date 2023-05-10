@@ -170,6 +170,7 @@ class TestNepaliNumberArithmeticOperations(unittest.TestCase):
             self.nepalinumber_integer_10 + (-15.5), self.nepalinumber_negative_float_5_5
         )
 
+    # TODO: typo
     def test_nepalinumber_integer_is_addable_to_postive_nepali_number_integer(self):
         self.assertEqual(
             self.nepalinumber_integer_10 + self.nepalinumber_integer_10,
@@ -485,6 +486,7 @@ class TestNepaliNumberArithmeticOperations(unittest.TestCase):
             self.nepalinumber_negative_float_15_6,
         )
 
+    # TODO: identical
     def test_nepalinumber_float_is_addable_to_positive_nepali_number_float_to_give_positive_nepali_number(
         self,
     ):
@@ -814,6 +816,7 @@ class TestNepaliNumberArithmeticOperations(unittest.TestCase):
             self.nepalinumber_zero,
         )
 
+    # TODO: identical
     def test_nepalinumber_float_is_subtractable_by_negative_nepali_number_float_to_give_positive_nepali_number(
         self,
     ):
@@ -1146,6 +1149,7 @@ class TestNepaliNumberArithmeticOperations(unittest.TestCase):
             "unsupported operand type(s) for *: 'nepalinumber' and 'type'",
         )
 
+    # TODO: identical
     def test_nepalinumber_throws_error_when_multiplied_with_objects_other_than_int_or_float(
         self,
     ):
@@ -2000,6 +2004,7 @@ class TestNepaliNumberArithmeticOperations(unittest.TestCase):
             self.nepalinumber_negative_integer_10,
         )
 
+    # TODO: typo
     def test_negative_nepalinumber_integer_can_be_modulo_divided_by_negative_nepainumber_float(
         self,
     ):
@@ -2096,6 +2101,7 @@ class TestNepaliNumberArithmeticOperations(unittest.TestCase):
             self.nepalinumber_negative_float_15_5,
         )
 
+    # TODO: typo
     def test_nepalinumber_float_can_be_modulo_divided_by_negative_nepainumber_float(
         self,
     ):

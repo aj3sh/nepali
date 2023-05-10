@@ -1,8 +1,8 @@
 import datetime as pythonDateTime
 
 from nepali import number
-from nepali.timezone import now, to_nepali_timezone
 from nepali.exceptions import InvalidNepaliDateTimeObjectException
+from nepali.timezone import now, to_nepali_timezone
 
 from ._datetime import nepalidate, nepalidatetime
 
@@ -10,6 +10,9 @@ from ._datetime import nepalidate, nepalidatetime
 class HumanizeDateTime:
     """
     HumanizeDate converts NepaliDateTime to nepali human readable form
+
+    # TODO: refactor this class, change this to nepalihumanize,
+    str supported path like os.path
     """
 
     __past_text = "अघि"
@@ -29,12 +32,14 @@ class HumanizeDateTime:
         threshold (kwargs): threshold to be humanize
         format (kwargs): format to display behind threshold
         """
+        # TODO: refactor, store in nepalidatetime, use utils method
         if type(datetime_obj) == nepalidatetime:
             self.datetime_obj = datetime_obj.to_datetime()
         elif type(datetime_obj) == nepalidate:
             self.datetime_obj = nepalidatetime.from_nepali_date(
                 datetime_obj
             ).to_datetime()
+
         elif type(datetime_obj) == pythonDateTime.date:
             self.datetime_obj = nepalidatetime.from_date(datetime_obj).to_datetime()
         elif type(datetime_obj) == pythonDateTime.datetime:
@@ -68,6 +73,7 @@ class HumanizeDateTime:
         seconds = self.__calc_seconds()  # calculating seconds
 
         if self.threshold is not None:
+            # TODO: Merge this if statement with the enclosing one.
             if seconds >= self.threshold:
                 return self.get_datetime().strip()
 

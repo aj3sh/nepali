@@ -54,6 +54,7 @@ class nepalinumber:
 
         return self.__parse_object(value)
 
+    # TODO: Refactor this function to reduce its Cognitive Complexity from 16 to the 15 allowed.
     def __parse_str(self, value: str) -> Union[int, float]:
         """
         Parses str object into int and float.
@@ -184,7 +185,7 @@ class nepalinumber:
         Checks if nepalinumber is equal to another object
 
         :param other: The other number/object which is to be checked for
-            equality againt nepalinumber
+            equality againt nepalinumber # TODO: typo
         :return: True if equal else False
         """
         if isinstance(other, nepalinumber):
@@ -197,7 +198,7 @@ class nepalinumber:
         Checks if nepalinumber is not equal to another object
 
         :param other: The other number/object which is to be checked for
-            equality againt nepalinumber
+            equality againt nepalinumber # TODO: typo
         :return: True if not equal else False
         """
         if isinstance(other, nepalinumber):
@@ -349,7 +350,7 @@ class nepalinumber:
         the nepalinumber object
 
         :param other: The other number/object that is to get
-            dividied by the value in the nepalinumber object
+            dividied by the value in the nepalinumber object # TODO: typo
         :raises TypeError: Raised when nepalinumber object is
             used to divide unsupported data types
         :return: Returns the quotient number as a nepalinumber
@@ -388,7 +389,7 @@ class nepalinumber:
         before the nepalinumber object
 
         :param other: The other number/object that is to get
-            dividied by the value in the nepalinumber object
+            dividied by the value in the nepalinumber object # TODO: typo
         :raises TypeError: Raised when nepalinumber object is
             used to divide unsupported data types
         :return: Returns the quotient number as a nepalinumber

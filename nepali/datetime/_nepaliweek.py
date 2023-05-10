@@ -37,6 +37,7 @@ class NepaliWeekMeta(type):
 
         return cls._cache[value]
 
+    # TODO: cls is unused
     def _parse_str(cls, week: str) -> int:
         """
         Parses str value of the week and returns int.

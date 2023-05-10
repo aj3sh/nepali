@@ -1,5 +1,7 @@
 """
 validates parsing
+
+TODO: refactor all
 """
 import re
 from typing import Optional, Tuple
@@ -73,11 +75,11 @@ class NepaliTimeRE(dict):
 
     def pattern(self, format):
         """
-        Handle conversion from format directives to regexes.
+        Handle conversion from format directives to regexes. # TODO: typo
         """
         processed_format = ""
         regex_chars = re.compile(r"([\\.^$*+?\(\){}\[\]|])")
-        format = regex_chars.sub(r"\\\1", format)
+        format = regex_chars.sub(r"\\\1", format) # TODO: Rename this variable name 'format'; it shadows a builtin.
         whitespace_replacement = re.compile(r"\s+")
         format = whitespace_replacement.sub(r"\\s+", format)
         while "%" in format:
@@ -100,7 +102,7 @@ class NepaliTimeRE(dict):
 
     def compile(self, format):
         """Return a compiled re object for the format string."""
-        return re.compile(self.pattern(format), re.IGNORECASE)
+        return re.compile(self.pattern(format), re.IGNORECASE) # TODO: self.pattern(...) might return None
 
 
 def get_nepali_time_re_object():

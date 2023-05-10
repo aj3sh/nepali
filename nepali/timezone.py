@@ -14,7 +14,7 @@ class NepaliTimeZone(datetime.tzinfo):
         return datetime.timedelta(0)
 
     def tzname(self, dt):
-        return "Asia/Kathmandu"
+        return "Asia/Kathmandu"  # constants
 
     def __str__(self):
         return "Asia/Kathmandu"

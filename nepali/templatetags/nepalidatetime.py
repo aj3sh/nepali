@@ -8,7 +8,7 @@ register = template.Library()
 
 
 @register.filter(name="nepalidate")
-def nepalidate(datetime_obj, format="%B %d, %Y, %A"):
+def nepalidate(datetime_obj, format="%B %d, %Y, %A"):  # TODO define constant
     nepali_datetime_obj = to_nepalidatetime(datetime_obj)
     if nepali_datetime_obj is None:
         return None

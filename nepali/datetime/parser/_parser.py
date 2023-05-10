@@ -16,6 +16,7 @@ def strptime(datetime_str, format):
     returns nepalidatetime object.
     """
     nepalidatetime_object = validate(datetime_str, format)
+    # TODO: remove none check
     if nepalidatetime_object is None:
         raise FormatNotMatchException(
             "Datetime string did not match with the given format."
@@ -69,6 +70,7 @@ def parse(datetime_str):
     standard_formats = _get_standard_formats()
     nepalidatetime_object = None
     for format in standard_formats:
+        # TODO: use strptime handling the exception raised by strptime
         nepalidatetime_object = validate(datetime_str, format=format)
         if nepalidatetime_object is not None:
             return nepalidatetime_object
